@@ -1,0 +1,102 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../guard/0.1.0/guard-0.1.0.module",
+    "group": "com.stringguard",
+    "module": "guard",
+    "version": "0.1.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "wasmJsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "guard-wasm-js-0.1.0.klib",
+          "url": "guard-wasm-js-0.1.0.klib",
+          "size": 7462,
+          "sha512": "af6558bfe0a79f1ae84298b30b4f09c76f274a922b858bac01357636732c133173cfe7c50d44037a5e8105464f25c9f76d394527c566b85301ec06a0955e708f",
+          "sha256": "00be5558f0d6fb1a142b8c1c03feaed611ff58b3546cc5406f19a74e7bd7cf90",
+          "sha1": "fe52ecb58db13f487236c7ad196aae232e334ffc",
+          "md5": "49a3c123a43dd5bff3a1e8b8907756c4"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "guard-wasm-js-0.1.0.klib",
+          "url": "guard-wasm-js-0.1.0.klib",
+          "size": 7462,
+          "sha512": "af6558bfe0a79f1ae84298b30b4f09c76f274a922b858bac01357636732c133173cfe7c50d44037a5e8105464f25c9f76d394527c566b85301ec06a0955e708f",
+          "sha256": "00be5558f0d6fb1a142b8c1c03feaed611ff58b3546cc5406f19a74e7bd7cf90",
+          "sha1": "fe52ecb58db13f487236c7ad196aae232e334ffc",
+          "md5": "49a3c123a43dd5bff3a1e8b8907756c4"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "files": [
+        {
+          "name": "guard-wasm-js-0.1.0-sources.jar",
+          "url": "guard-wasm-js-0.1.0-sources.jar",
+          "size": 2411,
+          "sha512": "ca5463581349bc14b0d6634790d858770171a2ac202d86a7d0b6f604da6a6bd73540dddfdcfd0b37f24fdca2667263505a4386d7cf627bc2bb3a169b9523293b",
+          "sha256": "f7069b75a6dc37bfc12ac05da8ed7d69f48e5bb5cd5568b9db9b1402e54fc5f6",
+          "sha1": "6c8df3c2885ee500c0802ba99bafb8c95000bf86",
+          "md5": "376264dcf162e48c7d9bcc397937cf52"
+        }
+      ]
+    }
+  ]
+}
