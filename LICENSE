@@ -1,0 +1,32 @@
+StringGuard License
+Copyright (c) 2026 Duran Ün. All rights reserved.
+
+StringGuard ("the Software") is proprietary software. This license governs the use
+of the StringGuard Gradle plugin and its published artifacts.
+
+1. Grant
+   You may download and use the Software as a build-time dependency to develop,
+   build and distribute your own applications.
+
+2. Restrictions
+   You may not:
+   a. redistribute, resell, sublicense or publish the Software or its artifacts,
+      in whole or in part;
+   b. reverse engineer, decompile or disassemble the Software, except to the
+      extent such restriction is prohibited by applicable law;
+   c. remove, disable or circumvent any license check, notice or identifier in
+      the Software.
+
+3. Licensing tiers
+   Some functionality may require a valid license key. Without a valid key the
+   Software operates on its free tier.
+
+4. No warranty
+   The Software is provided "as is", without warranty of any kind, express or
+   implied. To the maximum extent permitted by law, the author is not liable for
+   any claim or damages arising from the use of the Software.
+
+5. Termination
+   This license terminates automatically if you breach any of its terms.
+
+For commercial licensing or any questions, contact: duranun@gmail.com
