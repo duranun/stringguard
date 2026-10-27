@@ -1,0 +1,81 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../annotations/1.0.0/annotations-1.0.0.module",
+    "group": "com.stringguard",
+    "module": "annotations",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "macosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "annotations-macosArm64Main-1.0.0.klib",
+          "url": "annotations-macosarm64-1.0.0.klib",
+          "size": 4734,
+          "sha512": "5c6571c10d59d36572e08a39a6dc63c63f50e9765e5b04e9387a891793d34160cd13f718ff3e99e4bedc925cdbad460f0702bfb9b1770828c99e19928c9662ce",
+          "sha256": "291bd199423227349e5ae326425200a956131021d5fb3a406e4810072ae39015",
+          "sha1": "8eb0c71fb385e2a882afc9662d08b60b9889a37b",
+          "md5": "2ccd0a2a10ac0387a20bb6510cc081cc"
+        }
+      ]
+    },
+    {
+      "name": "macosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "annotations-macosarm64-1.0.0-metadata.jar",
+          "url": "annotations-macosarm64-1.0.0-metadata.jar",
+          "size": 261,
+          "sha512": "f9fb492c135692a1654e34503fc267c35d32b5d5b044f1940b732ca94a72ff2a38cfd85ca8fbfc986d478084b27034e4afecbcefebdda7f6424f2e6bbca1493d",
+          "sha256": "1b46a3ce547a6b2c2c2ba08eaeda87c408e545b1713fe273420eb4b296661e98",
+          "sha1": "be9ba8fc745a52fa38cc8f842f47223afed88759",
+          "md5": "0a47089749842c1d70e0644b81bdf7e2"
+        }
+      ]
+    }
+  ]
+}

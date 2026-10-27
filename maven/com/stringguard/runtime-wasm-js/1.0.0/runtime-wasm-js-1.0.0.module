@@ -1,0 +1,79 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../runtime/1.0.0/runtime-1.0.0.module",
+    "group": "com.stringguard",
+    "module": "runtime",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "wasmJsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "runtime-wasm-js-1.0.0.klib",
+          "url": "runtime-wasm-js-1.0.0.klib",
+          "size": 64644,
+          "sha512": "8603e64c4ffa9424f29a85af61457021a59554181ab098830aed1b0abdfd6608438d23062ec4dae9b15a5fb7bb9257d114a8729471b594c7b1013f0ed11dcd45",
+          "sha256": "0086fc39b3c93acc768cedf882a2e2be235ebe0b22671aa9e67e1df492a6c4ce",
+          "sha1": "8a18316a91ecbf7fc2a43650d32d01c54fb6dd0c",
+          "md5": "c845b982109db242cfe94bfc78ee24de"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "runtime-wasm-js-1.0.0.klib",
+          "url": "runtime-wasm-js-1.0.0.klib",
+          "size": 64644,
+          "sha512": "8603e64c4ffa9424f29a85af61457021a59554181ab098830aed1b0abdfd6608438d23062ec4dae9b15a5fb7bb9257d114a8729471b594c7b1013f0ed11dcd45",
+          "sha256": "0086fc39b3c93acc768cedf882a2e2be235ebe0b22671aa9e67e1df492a6c4ce",
+          "sha1": "8a18316a91ecbf7fc2a43650d32d01c54fb6dd0c",
+          "md5": "c845b982109db242cfe94bfc78ee24de"
+        }
+      ]
+    }
+  ]
+}

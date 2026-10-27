@@ -1,0 +1,81 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../attest-core/1.0.0/attest-core-1.0.0.module",
+    "group": "com.stringguard",
+    "module": "attest-core",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "attest-core-iosSimulatorArm64Main-1.0.0.klib",
+          "url": "attest-core-iossimulatorarm64-1.0.0.klib",
+          "size": 29095,
+          "sha512": "70bf79e0b92b5033d89577543befe6485f88906d6a69e8cbd37a3122a1bfc85caeace6670f6d67aa2ad74cbcd386972447f146f1726810c0134cd05db23b8449",
+          "sha256": "28a4114af3a69d16cc1774b6a50e0565b5a8e1bec9518134b905f36689c95f9f",
+          "sha1": "dbb762191f95b370f235b7eef5118f40704390cf",
+          "md5": "b3c06d7ba6ed0c2649d1c74790848232"
+        }
+      ]
+    },
+    {
+      "name": "iosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "attest-core-iossimulatorarm64-1.0.0-metadata.jar",
+          "url": "attest-core-iossimulatorarm64-1.0.0-metadata.jar",
+          "size": 3494,
+          "sha512": "430ee83714fa2e061f44b789cb9dea7cd252a505e06e6ad5b4bf0345c35deffee132dcd073a49056781067501cdbd5d7dd802617c21e8594c6eed6df5bcde75d",
+          "sha256": "342a630f2710a70062d49df97e20bbb339ea8b506af23f40a31846e3503c7e75",
+          "sha1": "8e2e5fd0ac2f81947edbad0b6f046cc2b96ec6d3",
+          "md5": "b4ff9fd2daa35a9ed1d8d78b358ff3ef"
+        }
+      ]
+    }
+  ]
+}

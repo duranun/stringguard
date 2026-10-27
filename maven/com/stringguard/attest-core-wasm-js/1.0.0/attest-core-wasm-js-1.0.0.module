@@ -1,0 +1,79 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../attest-core/1.0.0/attest-core-1.0.0.module",
+    "group": "com.stringguard",
+    "module": "attest-core",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "wasmJsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "attest-core-wasm-js-1.0.0.klib",
+          "url": "attest-core-wasm-js-1.0.0.klib",
+          "size": 25961,
+          "sha512": "7cc5577637d3c673c3d8dfc1c99377a70dd8542dc2947dc7324bcfa6e8a2f4c2552d06746314da36be793a234205bfae2fd88e9d2fcc9e1a96ec702727fa0887",
+          "sha256": "336a47ac91556611a121004bfc655f6a25ed79ae75de55f0124dbe7af7c7bd7a",
+          "sha1": "ffde7c967b654444d6528ab2bfcf339531e2f234",
+          "md5": "9ca61e6f34475b94f398b69f077e9738"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "attest-core-wasm-js-1.0.0.klib",
+          "url": "attest-core-wasm-js-1.0.0.klib",
+          "size": 25961,
+          "sha512": "7cc5577637d3c673c3d8dfc1c99377a70dd8542dc2947dc7324bcfa6e8a2f4c2552d06746314da36be793a234205bfae2fd88e9d2fcc9e1a96ec702727fa0887",
+          "sha256": "336a47ac91556611a121004bfc655f6a25ed79ae75de55f0124dbe7af7c7bd7a",
+          "sha1": "ffde7c967b654444d6528ab2bfcf339531e2f234",
+          "md5": "9ca61e6f34475b94f398b69f077e9738"
+        }
+      ]
+    }
+  ]
+}

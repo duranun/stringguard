@@ -1,0 +1,187 @@
+StringGuard Software License Agreement
+Version 2.0, 2026-10-26
+
+This agreement governs use of StringGuard. StringGuard is commercial,
+proprietary software. It is not open source, and no source license is granted
+by this agreement or by the availability of any artifact.
+
+By downloading, installing, or using the Software, you accept this agreement.
+If you do not accept it, do not use the Software.
+
+
+1. DEFINITIONS
+
+"Software" means the StringGuard Gradle plugin, compiler plugin, annotations,
+runtime, guard, attestation client libraries, and any documentation, in binary
+form, together with any updates provided to you.
+
+"Licensor" means the copyright holder of the Software.
+
+"You" means the individual or legal entity using the Software. If you use the
+Software for an employer, "you" includes that employer.
+
+"Commercial License Key" means a license key issued by the Licensor. The
+Software has a single feature set: a valid Commercial License Key enables all
+of it, and there is no reduced, free or trial feature set.
+
+"Your Application" means software you develop that incorporates the Software.
+
+
+2. LICENSE GRANT
+
+Subject to your holding a valid Commercial License Key, payment of the
+applicable fees, and compliance with this agreement, the Licensor grants you a
+worldwide, non-exclusive, non-transferable license, for the period the
+Commercial License Key covers, to:
+
+  (a) use the Software to build Your Application, for any purpose, including
+      commercial purposes; and
+
+  (b) incorporate the Software's runtime components into Your Application and
+      distribute them as part of Your Application, including through
+      application stores and to your own customers.
+
+The license in subsection (b), as it applies to the runtime components already
+incorporated into a version of Your Application that you distributed while your
+Commercial License Key was valid, is perpetual and survives the expiry of that
+key, so that your end users keep working copies.
+
+Separately, and without a Commercial License Key, you may redistribute the
+Software verbatim and unmodified, including through package registries and
+their mirrors. That permission covers redistribution only; it is not permission
+to use the Software to build Your Application.
+
+
+3. FEES AND TERM
+
+A Commercial License Key is issued for a stated period and is confidential. You
+may not share, publish, resell, or sublicense it. Fees, the covered period, and
+any renewal are as agreed between you and the Licensor.
+
+
+4. RESTRICTIONS
+
+You may not:
+
+  (a) use the Software to build Your Application without a valid Commercial
+      License Key;
+
+  (b) circumvent, disable, remove, or interfere with the Software's license
+      verification, or help anyone else do so;
+
+  (c) modify, adapt, translate, or create derivative works of the Software;
+
+  (d) reverse engineer, decompile, or disassemble the Software, or attempt to
+      derive its source code, except to the extent this restriction is
+      prohibited by applicable law. Where applicable law grants you a
+      non-waivable right to decompile for interoperability, including Article 6
+      of Directive 2009/24/EC, this restriction does not limit that right;
+
+  (e) redistribute the Software other than as permitted by section 2, in
+      particular not as, or as part of, a product that competes with the
+      Software;
+
+  (f) remove or alter any copyright, trademark, or license notice in the
+      Software; or
+
+  (g) use the Licensor's name or trademarks to endorse or promote Your
+      Application without written permission.
+
+
+5. OWNERSHIP
+
+The Software is licensed, not sold. The Licensor retains all right, title, and
+interest in the Software, including all intellectual property rights. You
+retain all rights in Your Application.
+
+
+6. LICENSE KEY VERIFICATION AND DATA
+
+The Software verifies license keys offline, using a cryptographic signature and
+no network call. Verification is performed when your build is configured, and a
+build that has no valid Commercial License Key fails rather than producing a
+partially protected result. Where you choose to deploy the optional attestation and
+licensing backend, the data it processes is described in the accompanying data
+handling documentation.
+
+
+7. NO WARRANTY
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
+
+You acknowledge the following, which the Software's documentation also states.
+The Software obfuscates string literals at compile time and decrypts them at
+runtime on the end user's device. The decryption key is therefore derivable on
+that device. The Software raises the cost of static analysis. It does not
+provide cryptographic secrecy, and it does not prevent an attacker with dynamic
+analysis tooling from recovering protected values at runtime. Its runtime
+self-protection checks can themselves be defeated. The Licensor does not
+warrant that the Software will prevent any particular attack, and the Software
+must not be relied on as the sole protection for a value that must not be
+disclosed. A value that must not be disclosed belongs on a server you control,
+not in a client binary.
+
+
+8. LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE LICENSOR IS NOT LIABLE
+FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR
+FOR ANY LOSS OF PROFITS, REVENUE, DATA, OR GOODWILL, ARISING OUT OF OR RELATING
+TO THIS AGREEMENT OR THE SOFTWARE.
+
+THE LICENSOR'S TOTAL AGGREGATE LIABILITY UNDER THIS AGREEMENT IS LIMITED TO THE
+AMOUNT YOU PAID FOR THE SOFTWARE IN THE TWELVE MONTHS PRECEDING THE EVENT
+GIVING RISE TO THE CLAIM, OR, IF YOU PAID NOTHING, TO ZERO.
+
+Nothing in this agreement excludes liability that cannot be excluded under
+applicable law, including liability for death or personal injury caused by
+negligence, or for fraud.
+
+
+9. TERM AND TERMINATION
+
+The license in section 2 runs for the period the Commercial License Key covers,
+and continues on renewal, unless terminated earlier. The redistribution
+permission in section 2 continues until terminated.
+
+This agreement terminates automatically if you breach it. On termination you
+must stop using the Software and remove it from your development environment.
+
+Copies of the Software already incorporated into versions of Your Application
+that you distributed before termination may continue to be used by your end
+users, so that termination does not reach past you to them.
+
+Sections 5, 7, 8, and 10, and the perpetual end-user carve-out in section 2,
+survive termination.
+
+
+10. GENERAL
+
+This agreement is the entire agreement between you and the Licensor regarding
+the Software, and supersedes any prior proposal or representation.
+
+If any provision is held unenforceable, it is modified to the minimum extent
+necessary to make it enforceable, and the remaining provisions stay in effect.
+
+A failure to enforce a provision is not a waiver of it.
+
+You may not assign this agreement without the Licensor's written consent. A
+transfer by operation of law to a successor of your business is permitted,
+provided the successor accepts this agreement.
+
+This agreement is governed by the laws of the Republic of Turkiye, excluding its
+conflict-of-laws rules and excluding the United Nations Convention on Contracts
+for the International Sale of Goods. The courts of Istanbul, Republic of
+Turkiye, have exclusive jurisdiction over any dispute arising out of or relating
+to this agreement.
+
+
+11. THIRD-PARTY COMPONENTS
+
+The Software redistributes third-party components under their own licenses. See
+the NOTICE file.
+
+
+Contact: https://github.com/duranun/kmp-string-guard

@@ -1,0 +1,90 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../guard/1.0.0/guard-1.0.0.module",
+    "group": "com.stringguard",
+    "module": "guard",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "macosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "guard-macosArm64Main-1.0.0.klib",
+          "url": "guard-macosarm64-1.0.0.klib",
+          "size": 41545,
+          "sha512": "860edd19ef8f0248c55476179b4b423d95dc7938c9fef4dadef6a990c9e31b1a2d02785997ca86da87de281c167abf626b2e8f5131341f088249efcee67af2f1",
+          "sha256": "b894071ac659a2d5c06010d62af0b3567a8bc5172d5aef1a3882130963d9f314",
+          "sha1": "fd4ecf91fef4c18b201e82ba781e3195344c1f20",
+          "md5": "cc039f7fffdcfa4ddfd974afc5f4b78d"
+        },
+        {
+          "name": "guard-macosArm64Cinterop-darwinSysctlMain-1.0.0.klib",
+          "url": "guard-macosarm64-1.0.0-cinterop-darwinSysctl.klib",
+          "size": 18153,
+          "sha512": "d63261526a61482e83793f0019c929187158d0b342a9611ed4c5977e67fb0dddb8b55c16600874245164e19be98bd001d2c935c1b666e961594235b275b289ee",
+          "sha256": "c7ea5affbd580a25a1ba1c5449590d75e6b473322de30735c0202a9c426eba68",
+          "sha1": "ea7e8f8825ed5c7e61e653745448a939c3906f29",
+          "md5": "eeba92a46cf1d29f77a01bb15f0f2db9"
+        }
+      ]
+    },
+    {
+      "name": "macosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "guard-macosarm64-1.0.0-metadata.jar",
+          "url": "guard-macosarm64-1.0.0-metadata.jar",
+          "size": 261,
+          "sha512": "0be9e2c75ab2f1e74a62973fa5a518d11e150a47503b12dbd5c83f8963f04a241abb7933a786ce0e3b613498999c85f0e458394fa12934ce20f2745fa5f41dc9",
+          "sha256": "7f05a1778c2990b00e9e01cfb691b0ef42e3e5a88f2a2225b7b4d3bd8fb66dce",
+          "sha1": "5e9f18a8fda4a67a3acf8fae79fa29ec9316b842",
+          "md5": "afcc152db5573b795a86d437e790f6f2"
+        }
+      ]
+    }
+  ]
+}

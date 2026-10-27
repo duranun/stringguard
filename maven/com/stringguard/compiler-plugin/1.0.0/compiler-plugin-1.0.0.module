@@ -1,0 +1,82 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.stringguard",
+    "module": "compiler-plugin",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "compiler-plugin-1.0.0.jar",
+          "url": "compiler-plugin-1.0.0.jar",
+          "size": 36942,
+          "sha512": "28638d6ccf73202562133d45bc3c64e4b7f92211ce0a8acf6fcbca68775c7768ec765fb31dc80c1d1dfe475a1feace7a36e5ff53d61a0fd55426d69ff7055cf5",
+          "sha256": "380482f9838b8dac814a2253743aad6e026cd38f7be9dcc3d14075b06bf39b72",
+          "sha1": "a8636672243903ce6c95db82069d8bd598e2dd41",
+          "md5": "7bd0df894c471e693ceb467a49df8d71"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "compiler-plugin-1.0.0.jar",
+          "url": "compiler-plugin-1.0.0.jar",
+          "size": 36942,
+          "sha512": "28638d6ccf73202562133d45bc3c64e4b7f92211ce0a8acf6fcbca68775c7768ec765fb31dc80c1d1dfe475a1feace7a36e5ff53d61a0fd55426d69ff7055cf5",
+          "sha256": "380482f9838b8dac814a2253743aad6e026cd38f7be9dcc3d14075b06bf39b72",
+          "sha1": "a8636672243903ce6c95db82069d8bd598e2dd41",
+          "md5": "7bd0df894c471e693ceb467a49df8d71"
+        }
+      ]
+    }
+  ]
+}

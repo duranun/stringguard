@@ -1,0 +1,81 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../runtime/1.0.0/runtime-1.0.0.module",
+    "group": "com.stringguard",
+    "module": "runtime",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "macosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "runtime-macosArm64Main-1.0.0.klib",
+          "url": "runtime-macosarm64-1.0.0.klib",
+          "size": 60105,
+          "sha512": "f5687fb7ad9dad7ee5861b8be012cb845b563c274c2ce67b82c6fc665979ac20902f5a2bc0e8738571e000bbbb78f0dea30e4bf35c7d723f7bd88991a0b84dde",
+          "sha256": "89479a2b69055246b87e3a3d6ad4917130f05baffb2c2c5b938746553ace0d91",
+          "sha1": "5abb9240373b34f1c3102f1fd45298b175787a3a",
+          "md5": "80a4ea5b6f7f880f320373d252b231ef"
+        }
+      ]
+    },
+    {
+      "name": "macosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "runtime-macosarm64-1.0.0-metadata.jar",
+          "url": "runtime-macosarm64-1.0.0-metadata.jar",
+          "size": 2454,
+          "sha512": "aaba9eefe04074f049c923e5488f633b54aee91dc706c3672b2306fd2966ca1fd94562f321199ef79262f7050a5a7bd9b316bf8536f46f1246272f4b7a8930dc",
+          "sha256": "a8c5b26c33f0e8fb7316cbd184e005f558b39f3c6cb5096e578818ebd7b246fb",
+          "sha1": "ebb184d0baea6bd4d1afa74f05babd67f409d7d7",
+          "md5": "ff9465140cebbfcd8c81b5d9bb75bc1c"
+        }
+      ]
+    }
+  ]
+}
