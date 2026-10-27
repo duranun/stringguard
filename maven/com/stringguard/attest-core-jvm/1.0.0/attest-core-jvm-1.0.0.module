@@ -1,0 +1,79 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../attest-core/1.0.0/attest-core-1.0.0.module",
+    "group": "com.stringguard",
+    "module": "attest-core",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "attest-core-jvm-1.0.0.jar",
+          "url": "attest-core-jvm-1.0.0.jar",
+          "size": 31625,
+          "sha512": "3359ff4532f48634616990fc0061a86ededde391d42fd0919e4c5b4c7da499ef1e90ba881c3eccc4608e3bd263340496e952cba2e12885929a533ad74642b52d",
+          "sha256": "25e583718a72f1e728ab92e7f5ef3b7e53626a0cb65a17d3156def3ff7bb2c9e",
+          "sha1": "4207fd6a661277b16c33f80d1f01f160032caeec",
+          "md5": "bc62eafe480fa639a01b0e023a1cd2bc"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "attest-core-jvm-1.0.0.jar",
+          "url": "attest-core-jvm-1.0.0.jar",
+          "size": 31625,
+          "sha512": "3359ff4532f48634616990fc0061a86ededde391d42fd0919e4c5b4c7da499ef1e90ba881c3eccc4608e3bd263340496e952cba2e12885929a533ad74642b52d",
+          "sha256": "25e583718a72f1e728ab92e7f5ef3b7e53626a0cb65a17d3156def3ff7bb2c9e",
+          "sha1": "4207fd6a661277b16c33f80d1f01f160032caeec",
+          "md5": "bc62eafe480fa639a01b0e023a1cd2bc"
+        }
+      ]
+    }
+  ]
+}

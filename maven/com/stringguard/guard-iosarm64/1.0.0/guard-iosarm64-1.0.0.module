@@ -1,0 +1,90 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../guard/1.0.0/guard-1.0.0.module",
+    "group": "com.stringguard",
+    "module": "guard",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "guard-iosArm64Main-1.0.0.klib",
+          "url": "guard-iosarm64-1.0.0.klib",
+          "size": 41532,
+          "sha512": "2325347aa8ca31616bf7b6abe8b5a6b5053d237965bd9a9a90f666afde44bf1f210e8caac03b4ec5469128151c73176c0663e6e66c7e3571267392003564db60",
+          "sha256": "5823176e8edf15d2511fd83ed22ed88a0c308e7e1e9024ff25d5aa921691aca7",
+          "sha1": "6a7e1ab25461b730837821b8ecdcf17fe0e56153",
+          "md5": "5182a77ec889519998db616785b1fba2"
+        },
+        {
+          "name": "guard-iosArm64Cinterop-darwinSysctlMain-1.0.0.klib",
+          "url": "guard-iosarm64-1.0.0-cinterop-darwinSysctl.klib",
+          "size": 12423,
+          "sha512": "05cf7406213bde601e78c97b6ed1bf0823d4e4541a8218180677577ea25564e48a43d5441530155bfa8c5957f1ef04d33009fb1d158aa0e0bd74d01f184fc7fc",
+          "sha256": "7c12cccf6c33f241fa5cb6b6e3d1046e891784dc32dbe6112f6ba06e875fe7e8",
+          "sha1": "ad0c5dc6da24f8f89583043fd1972f2accc1ecc0",
+          "md5": "b377acf78ab9ef7f458d1efecde66ade"
+        }
+      ]
+    },
+    {
+      "name": "iosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "guard-iosarm64-1.0.0-metadata.jar",
+          "url": "guard-iosarm64-1.0.0-metadata.jar",
+          "size": 261,
+          "sha512": "db9ba1baccfa972be2e689b172ba09be5309b70548833448097abc5fea1749fe3c77710f75f341b6f2f9e2ee15f275a364e83d0ce892dcddbd87aa6dbb06d20b",
+          "sha256": "955abfb4b1dd191fa819d6243cce99c6dc193fd0f086350b3ed6fe77f8f2b786",
+          "sha1": "834076330251cd5355e380d35f5177a5b0f0cc8d",
+          "md5": "1cfae63cdd31449ad44bf1823f8d3eac"
+        }
+      ]
+    }
+  ]
+}

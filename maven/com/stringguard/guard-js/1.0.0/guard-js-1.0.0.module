@@ -1,0 +1,93 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../guard/1.0.0/guard-1.0.0.module",
+    "group": "com.stringguard",
+    "module": "guard",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "jsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "guard-js-1.0.0.klib",
+          "url": "guard-js-1.0.0.klib",
+          "size": 43941,
+          "sha512": "ee9cc377b668d895bf7d5aa5a5ce59c9dd757e6402d1ec091e2cf53d9382ce65718e5864088ca1682abfc4fa2bf8440ab1ea9130d370dcd8784a153d08aae900",
+          "sha256": "8affa2fa0ba0a96222233dc68765805796ba3ff497f475d227e9e54e0594588b",
+          "sha1": "f147bed201758fad69e442ef06fdf82d910b68ea",
+          "md5": "398698956ffae6f9c5b9baa0b5700473"
+        }
+      ]
+    },
+    {
+      "name": "jsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "guard-js-1.0.0.klib",
+          "url": "guard-js-1.0.0.klib",
+          "size": 43941,
+          "sha512": "ee9cc377b668d895bf7d5aa5a5ce59c9dd757e6402d1ec091e2cf53d9382ce65718e5864088ca1682abfc4fa2bf8440ab1ea9130d370dcd8784a153d08aae900",
+          "sha256": "8affa2fa0ba0a96222233dc68765805796ba3ff497f475d227e9e54e0594588b",
+          "sha1": "f147bed201758fad69e442ef06fdf82d910b68ea",
+          "md5": "398698956ffae6f9c5b9baa0b5700473"
+        }
+      ]
+    }
+  ]
+}

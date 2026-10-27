@@ -1,0 +1,90 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../guard/1.0.0/guard-1.0.0.module",
+    "group": "com.stringguard",
+    "module": "guard",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "guard-iosSimulatorArm64Main-1.0.0.klib",
+          "url": "guard-iossimulatorarm64-1.0.0.klib",
+          "size": 41598,
+          "sha512": "ec9ba0197b9670f951db042df76df892ad9ab73e6e2cc593873ccaf52f42ac99ac5985e016549f5df10ad123a02c2c10fe4732b9d038ed10e09fd812669fa31b",
+          "sha256": "1124fa3a57c0f6ec8d9c78c3284c72cd3aae25e27876b1d6767a5ec19f3255ee",
+          "sha1": "ccd00cc632f79f8e511816fcfdedf60bbab14591",
+          "md5": "fc8eb4ff9b1ff9ab49b4af1152700d91"
+        },
+        {
+          "name": "guard-iosSimulatorArm64Cinterop-darwinSysctlMain-1.0.0.klib",
+          "url": "guard-iossimulatorarm64-1.0.0-cinterop-darwinSysctl.klib",
+          "size": 13022,
+          "sha512": "ae6bd15231ef7f8b5240256907b053054bc31e0e1b3d062108f444a6b8de9216eddcd76f6ef0786be372f42705a6654227ad26b9a48ce07cea89f76714454f31",
+          "sha256": "741d22af2c211fdd51dc1a87e409bbae4e610974f1ed0f50aa87472146b35f2f",
+          "sha1": "bb46836a0e6f759890467a4d3536297e3eb966fc",
+          "md5": "a4b7dfd9d5118ab6c7adbd5c4f7d0790"
+        }
+      ]
+    },
+    {
+      "name": "iosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "guard-iossimulatorarm64-1.0.0-metadata.jar",
+          "url": "guard-iossimulatorarm64-1.0.0-metadata.jar",
+          "size": 261,
+          "sha512": "db9ba1baccfa972be2e689b172ba09be5309b70548833448097abc5fea1749fe3c77710f75f341b6f2f9e2ee15f275a364e83d0ce892dcddbd87aa6dbb06d20b",
+          "sha256": "955abfb4b1dd191fa819d6243cce99c6dc193fd0f086350b3ed6fe77f8f2b786",
+          "sha1": "834076330251cd5355e380d35f5177a5b0f0cc8d",
+          "md5": "1cfae63cdd31449ad44bf1823f8d3eac"
+        }
+      ]
+    }
+  ]
+}

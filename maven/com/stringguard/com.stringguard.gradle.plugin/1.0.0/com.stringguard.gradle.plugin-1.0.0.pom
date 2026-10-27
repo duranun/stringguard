@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.stringguard</groupId>
+  <artifactId>com.stringguard.gradle.plugin</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+  <name>StringGuard gradle-plugin</name>
+  <description>Compile-time string obfuscation for Kotlin, Kotlin Multiplatform and Android.</description>
+  <url>https://github.com/duranun/stringguard</url>
+  <inceptionYear>2026</inceptionYear>
+  <licenses>
+    <license>
+      <name>StringGuard Software License Agreement</name>
+      <url>https://github.com/duranun/stringguard/blob/main/LICENSE</url>
+      <distribution>repo</distribution>
+      <comments>Proprietary. Building with StringGuard requires a commercial license key.</comments>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>duranun</id>
+      <name>Duran Un</name>
+      <url>https://github.com/duranun</url>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:https://github.com/duranun/stringguard.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/duranun/stringguard.git</developerConnection>
+    <url>https://github.com/duranun/stringguard</url>
+  </scm>
+  <issueManagement>
+    <system>GitHub Issues</system>
+    <url>https://github.com/duranun/stringguard/issues</url>
+  </issueManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.stringguard</groupId>
+      <artifactId>gradle-plugin</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+  </dependencies>
+</project>
