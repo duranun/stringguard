@@ -1,0 +1,81 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../attest-core/1.0.0/attest-core-1.0.0.module",
+    "group": "com.stringguard",
+    "module": "attest-core",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "attest-core-iosArm64Main-1.0.0.klib",
+          "url": "attest-core-iosarm64-1.0.0.klib",
+          "size": 29039,
+          "sha512": "da3ba4ed79191ac548ac3c07b2be1a1b8bfd4c0feea94631cb8d183b2288bf5d3b2cb9ec5abc85d2e4cd02f42e6254002423e2f9005c8cd3962338218b51e91c",
+          "sha256": "8340dcacfd6604e5272fca7800f30269652f4a882e40cc17998efe61d6b4c7cd",
+          "sha1": "ab1a865379a3493ca38ae53f94b399b69b6b8d08",
+          "md5": "9b84510716bf57a6efaa851171a0da61"
+        }
+      ]
+    },
+    {
+      "name": "iosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "attest-core-iosarm64-1.0.0-metadata.jar",
+          "url": "attest-core-iosarm64-1.0.0-metadata.jar",
+          "size": 3494,
+          "sha512": "430ee83714fa2e061f44b789cb9dea7cd252a505e06e6ad5b4bf0345c35deffee132dcd073a49056781067501cdbd5d7dd802617c21e8594c6eed6df5bcde75d",
+          "sha256": "342a630f2710a70062d49df97e20bbb339ea8b506af23f40a31846e3503c7e75",
+          "sha1": "8e2e5fd0ac2f81947edbad0b6f046cc2b96ec6d3",
+          "md5": "b4ff9fd2daa35a9ed1d8d78b358ff3ef"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!--
+	  The plugin reads and writes one value in UserDefaults: the App Attest key
+	  id returned when the Secure Enclave key is created, which is the only way
+	  to use that key again. UserDefaults is a required-reason API, so an app
+	  embedding this plugin is warned (ITMS-91053) unless the use is declared,
+	  and the declaration belongs to the SDK rather than the app.
+
+	  CA92.1 is the reason for reading and writing values accessible only to the
+	  app itself, which is what this is: the value is written by the plugin and
+	  read back by the plugin, in the app's own domain.
+	-->
+	<key>NSPrivacyAccessedAPITypes</key>
+	<array>
+		<dict>
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryUserDefaults</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>CA92.1</string>
+			</array>
+		</dict>
+	</array>
+	<!--
+	  Nothing is collected. The plugin sends the attestation material it produces
+	  to the backend the embedding app chooses, and keeps nothing of its own.
+	-->
+	<key>NSPrivacyCollectedDataTypes</key>
+	<array/>
+	<key>NSPrivacyTracking</key>
+	<false/>
+	<key>NSPrivacyTrackingDomains</key>
+	<array/>
+</dict>
+</plist>

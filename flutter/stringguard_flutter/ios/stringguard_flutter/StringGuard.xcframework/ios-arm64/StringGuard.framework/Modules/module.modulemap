@@ -1,0 +1,8 @@
+framework module "StringGuard" {
+    umbrella header "StringGuard.h"
+
+    export *
+    module * { export * }
+
+    use Foundation
+}

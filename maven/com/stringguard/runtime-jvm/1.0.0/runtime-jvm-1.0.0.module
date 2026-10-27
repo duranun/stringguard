@@ -1,0 +1,79 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../runtime/1.0.0/runtime-1.0.0.module",
+    "group": "com.stringguard",
+    "module": "runtime",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "runtime-jvm-1.0.0.jar",
+          "url": "runtime-jvm-1.0.0.jar",
+          "size": 37125,
+          "sha512": "99e6690f41490e5e8973fab511ded07ae4feb086f967ec04deaac43407ea0436bc955bc26b161140b20790f7b5ef48d6290ebf67d564828f1f604feae3ac3900",
+          "sha256": "e824a1631064210b529d2e48130783fe08dcc0ef9a0fb1b9b77c1d7ad03db130",
+          "sha1": "b9ac3861da278b41219aae21e25325d67c03c143",
+          "md5": "28cfdfd5512a3665520305fbc92ba2f0"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "runtime-jvm-1.0.0.jar",
+          "url": "runtime-jvm-1.0.0.jar",
+          "size": 37125,
+          "sha512": "99e6690f41490e5e8973fab511ded07ae4feb086f967ec04deaac43407ea0436bc955bc26b161140b20790f7b5ef48d6290ebf67d564828f1f604feae3ac3900",
+          "sha256": "e824a1631064210b529d2e48130783fe08dcc0ef9a0fb1b9b77c1d7ad03db130",
+          "sha1": "b9ac3861da278b41219aae21e25325d67c03c143",
+          "md5": "28cfdfd5512a3665520305fbc92ba2f0"
+        }
+      ]
+    }
+  ]
+}

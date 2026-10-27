@@ -1,0 +1,82 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.stringguard",
+    "module": "license-core",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "license-core-1.0.0.jar",
+          "url": "license-core-1.0.0.jar",
+          "size": 20503,
+          "sha512": "3e726a51bab0f2f4bc82d0c42ebfe40d69f22b80abfd84ce257f20ab2d8db5fe87cea96f2af81c1ef1e7d89ff6095d31979c760e929415d0d961d81f3799fa1f",
+          "sha256": "227e51e06cacf5a9055cfa91cc936f4c433d1d3de9884a347e2ac592259289ef",
+          "sha1": "aaf5fe07a69669117eba00d5cb3acfbdc0181a7c",
+          "md5": "510230306acdf81b67969ca1d309cf29"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "license-core-1.0.0.jar",
+          "url": "license-core-1.0.0.jar",
+          "size": 20503,
+          "sha512": "3e726a51bab0f2f4bc82d0c42ebfe40d69f22b80abfd84ce257f20ab2d8db5fe87cea96f2af81c1ef1e7d89ff6095d31979c760e929415d0d961d81f3799fa1f",
+          "sha256": "227e51e06cacf5a9055cfa91cc936f4c433d1d3de9884a347e2ac592259289ef",
+          "sha1": "aaf5fe07a69669117eba00d5cb3acfbdc0181a7c",
+          "md5": "510230306acdf81b67969ca1d309cf29"
+        }
+      ]
+    }
+  ]
+}

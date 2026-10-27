@@ -1,0 +1,46 @@
+StringGuard
+Copyright 2026 Duran Ün
+
+This product includes third-party software, listed below with the license each
+one is used under. The StringGuard license in the LICENSE file does not apply to
+these components.
+
+
+Kotlin Standard Library and Kotlin/Native runtime
+Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language
+contributors
+Licensed under the Apache License, Version 2.0
+https://www.apache.org/licenses/LICENSE-2.0
+https://github.com/JetBrains/kotlin
+
+  How it reaches you differs by target, and only one case is redistribution.
+
+  On JVM, Android, JS and Wasm targets, the Kotlin standard library is a
+  declared dependency of the StringGuard artifacts. Your build resolves it from
+  a package registry directly, under its own license. StringGuard does not
+  redistribute it on those targets.
+
+  On Apple targets, `StringGuard.framework` is a Kotlin/Native binary, and the
+  Kotlin/Native runtime and standard library are statically linked into it.
+  Distributing that framework, including inside an application, therefore
+  redistributes Apache-2.0 licensed material. This notice is provided to
+  satisfy sections 4(a) and 4(d) of the Apache License, Version 2.0. You do not
+  need to take any additional action: including StringGuard's LICENSE and NOTICE
+  files with your application, which the StringGuard license already permits,
+  carries the attribution forward.
+
+
+Build-time components, not redistributed
+---------------------------------------
+
+The following are used while building the Software but are not included in any
+published StringGuard artifact. They are declared `compileOnly`, so they are
+neither bundled nor imposed as dependencies on your build.
+
+  Kotlin compiler (kotlin-compiler-embeddable), Apache License 2.0
+  Kotlin Gradle plugin and its API, Apache License 2.0
+  Gradle API, Apache License 2.0
+
+The JavaScript and WebAssembly test toolchain resolved by the Kotlin Gradle
+plugin, recorded in `kotlin-js-store/yarn.lock`, is likewise build-time only
+and is not part of any published artifact.

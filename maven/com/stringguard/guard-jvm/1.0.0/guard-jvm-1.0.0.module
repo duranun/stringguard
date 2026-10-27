@@ -1,0 +1,79 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../guard/1.0.0/guard-1.0.0.module",
+    "group": "com.stringguard",
+    "module": "guard",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "guard-jvm-1.0.0.jar",
+          "url": "guard-jvm-1.0.0.jar",
+          "size": 39973,
+          "sha512": "dd851a2da8ddc345a70d854e62087595bfede4b309675e5fbd971f853d6b5a8d18a8a8be37d86cf9d62221733751e457f3d1d9fc6fc6a7f4acd599d402e83e90",
+          "sha256": "812056f1cf778ace0fb78cb9c6fac45760c7f346c74e3552c4d853ed67c7b273",
+          "sha1": "7e202c4cd9ed89d58c4180a263ab677be07ad021",
+          "md5": "297337002cddc23a0eb36a36c5eb00a7"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "guard-jvm-1.0.0.jar",
+          "url": "guard-jvm-1.0.0.jar",
+          "size": 39973,
+          "sha512": "dd851a2da8ddc345a70d854e62087595bfede4b309675e5fbd971f853d6b5a8d18a8a8be37d86cf9d62221733751e457f3d1d9fc6fc6a7f4acd599d402e83e90",
+          "sha256": "812056f1cf778ace0fb78cb9c6fac45760c7f346c74e3552c4d853ed67c7b273",
+          "sha1": "7e202c4cd9ed89d58c4180a263ab677be07ad021",
+          "md5": "297337002cddc23a0eb36a36c5eb00a7"
+        }
+      ]
+    }
+  ]
+}

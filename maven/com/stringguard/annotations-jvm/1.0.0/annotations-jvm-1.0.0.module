@@ -1,0 +1,79 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../annotations/1.0.0/annotations-1.0.0.module",
+    "group": "com.stringguard",
+    "module": "annotations",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "annotations-jvm-1.0.0.jar",
+          "url": "annotations-jvm-1.0.0.jar",
+          "size": 8380,
+          "sha512": "7be37b7eacbcaeb86192dbebf1655e59dd4ffde2788eabe288ebbaa39ea62d3651b7cf9a1f0e97df59e704827b6dde35108ef29b6612373db4edc94330925d96",
+          "sha256": "59360bb1bd92bb7d275a46c98f2e07e8df1492a32517ff6adaeaa51a99926e2c",
+          "sha1": "9cd3161cb79c5aaeb185434ff156e6b8257fa56c",
+          "md5": "b8f8a0acfe78adab04800793dceaf5a8"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "annotations-jvm-1.0.0.jar",
+          "url": "annotations-jvm-1.0.0.jar",
+          "size": 8380,
+          "sha512": "7be37b7eacbcaeb86192dbebf1655e59dd4ffde2788eabe288ebbaa39ea62d3651b7cf9a1f0e97df59e704827b6dde35108ef29b6612373db4edc94330925d96",
+          "sha256": "59360bb1bd92bb7d275a46c98f2e07e8df1492a32517ff6adaeaa51a99926e2c",
+          "sha1": "9cd3161cb79c5aaeb185434ff156e6b8257fa56c",
+          "md5": "b8f8a0acfe78adab04800793dceaf5a8"
+        }
+      ]
+    }
+  ]
+}

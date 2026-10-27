@@ -1,0 +1,81 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../attest-core/1.0.0/attest-core-1.0.0.module",
+    "group": "com.stringguard",
+    "module": "attest-core",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "macosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "attest-core-macosArm64Main-1.0.0.klib",
+          "url": "attest-core-macosarm64-1.0.0.klib",
+          "size": 29052,
+          "sha512": "941242146c5893667578ea60d58945f71098927776094eb4a378e028835a8e9212941184141eb3ce3ee2a31ca0c36b96f5dad457c903a563a292decd2426d5bb",
+          "sha256": "28c5bacb97f6bdab10a4c6bb8886d55bd4639d0f1dbe7c389264be3d07a37a11",
+          "sha1": "52552a18b58ccf117dfb291ee0b8f76b44fedb66",
+          "md5": "cff8348e01d06cd9f1dac851a972f0f8"
+        }
+      ]
+    },
+    {
+      "name": "macosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "attest-core-macosarm64-1.0.0-metadata.jar",
+          "url": "attest-core-macosarm64-1.0.0-metadata.jar",
+          "size": 3494,
+          "sha512": "430ee83714fa2e061f44b789cb9dea7cd252a505e06e6ad5b4bf0345c35deffee132dcd073a49056781067501cdbd5d7dd802617c21e8594c6eed6df5bcde75d",
+          "sha256": "342a630f2710a70062d49df97e20bbb339ea8b506af23f40a31846e3503c7e75",
+          "sha1": "8e2e5fd0ac2f81947edbad0b6f046cc2b96ec6d3",
+          "md5": "b4ff9fd2daa35a9ed1d8d78b358ff3ef"
+        }
+      ]
+    }
+  ]
+}

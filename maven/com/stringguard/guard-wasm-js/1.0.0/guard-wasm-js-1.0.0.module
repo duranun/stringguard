@@ -1,0 +1,79 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../guard/1.0.0/guard-1.0.0.module",
+    "group": "com.stringguard",
+    "module": "guard",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "wasmJsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "guard-wasm-js-1.0.0.klib",
+          "url": "guard-wasm-js-1.0.0.klib",
+          "size": 43949,
+          "sha512": "580fd81e7c34aefd943c2d09c8c80ae8d66514785c03160df15d753cac48071bccd3399b744fc68db3dbeffba4e1ffaaa51c4d27392f7b3dc504b6af8870581b",
+          "sha256": "9f7472f6390c73ff60b4d26d47ed31716bed6272df1d95b8e7c7e4b97c9c3633",
+          "sha1": "40d9cf4d09f2d92ff18bc49a942d7d1626cbb95c",
+          "md5": "40ff73622977e9777b7cbc8912f9a161"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "guard-wasm-js-1.0.0.klib",
+          "url": "guard-wasm-js-1.0.0.klib",
+          "size": 43949,
+          "sha512": "580fd81e7c34aefd943c2d09c8c80ae8d66514785c03160df15d753cac48071bccd3399b744fc68db3dbeffba4e1ffaaa51c4d27392f7b3dc504b6af8870581b",
+          "sha256": "9f7472f6390c73ff60b4d26d47ed31716bed6272df1d95b8e7c7e4b97c9c3633",
+          "sha1": "40d9cf4d09f2d92ff18bc49a942d7d1626cbb95c",
+          "md5": "40ff73622977e9777b7cbc8912f9a161"
+        }
+      ]
+    }
+  ]
+}

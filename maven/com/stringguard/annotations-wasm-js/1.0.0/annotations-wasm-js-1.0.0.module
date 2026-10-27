@@ -1,0 +1,79 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../annotations/1.0.0/annotations-1.0.0.module",
+    "group": "com.stringguard",
+    "module": "annotations",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "wasmJsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "annotations-wasm-js-1.0.0.klib",
+          "url": "annotations-wasm-js-1.0.0.klib",
+          "size": 9122,
+          "sha512": "b93d06039beb906b6d211ece3ae83b082d17601d5f9633534301a7825f9224e1335e674f0beda6aa985febc6fdfe3e1597628b43c46c12066e5bd29b2c9a2770",
+          "sha256": "4abafcd890cd350e06fedf4ee2534f6d21c889dd4b7344364b5ff853ce6d3289",
+          "sha1": "6404d14ce31bc9c03f05d3184ecd547861d2dd4f",
+          "md5": "4f4cdda8d910a24079424b6915165be2"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "annotations-wasm-js-1.0.0.klib",
+          "url": "annotations-wasm-js-1.0.0.klib",
+          "size": 9122,
+          "sha512": "b93d06039beb906b6d211ece3ae83b082d17601d5f9633534301a7825f9224e1335e674f0beda6aa985febc6fdfe3e1597628b43c46c12066e5bd29b2c9a2770",
+          "sha256": "4abafcd890cd350e06fedf4ee2534f6d21c889dd4b7344364b5ff853ce6d3289",
+          "sha1": "6404d14ce31bc9c03f05d3184ecd547861d2dd4f",
+          "md5": "4f4cdda8d910a24079424b6915165be2"
+        }
+      ]
+    }
+  ]
+}
