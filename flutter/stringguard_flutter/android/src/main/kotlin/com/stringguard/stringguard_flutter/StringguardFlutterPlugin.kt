@@ -12,6 +12,8 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
+import io.flutter.plugin.common.StandardMethodCodec
+import java.security.KeyStore
 
 /** StringguardFlutterPlugin */
 class StringguardFlutterPlugin :
@@ -24,7 +26,15 @@ class StringguardFlutterPlugin :
     private lateinit var channel: MethodChannel
 
     override fun onAttachedToEngine(flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-        channel = MethodChannel(flutterPluginBinding.binaryMessenger, "stringguard_flutter")
+        // Key generation, StrongBox in particular, can take seconds. Handling
+        // calls on a background task queue keeps that off the UI thread.
+        val messenger = flutterPluginBinding.binaryMessenger
+        channel = MethodChannel(
+            messenger,
+            "stringguard_flutter",
+            StandardMethodCodec.INSTANCE,
+            messenger.makeBackgroundTaskQueue(),
+        )
         channel.setMethodCallHandler(this)
     }
 
@@ -78,6 +88,15 @@ class StringguardFlutterPlugin :
                     call.argument<ByteArray>("nonce")!!,
                 )
                 result.success(sig)
+            }
+            "deviceChain" -> {
+                // The chain of the key attested earlier, for /attest/prove. Reading
+                // it generates nothing, so a refresh costs no new hardware key.
+                val alias = deviceKeyAlias(call.argument<String>("tenantId")!!)
+                val chain = runCatching {
+                    KeyStore.getInstance("AndroidKeyStore").apply { load(null) }.getCertificateChain(alias)
+                }.getOrNull()
+                result.success(chain?.map { it.encoded })
             }
             "deleteDeviceKey" -> {
                 platformDeleteKey(deviceKeyAlias(call.argument<String>("tenantId")!!))

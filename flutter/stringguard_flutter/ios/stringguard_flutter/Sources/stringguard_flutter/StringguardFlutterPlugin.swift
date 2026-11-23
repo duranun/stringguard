@@ -71,6 +71,11 @@ public class StringguardFlutterPlugin: NSObject, FlutterPlugin {
       // is the documented degrade; the caller falls back to an unbound request.
       result(nil)
 
+    case "deviceChain":
+      // Android only. An iOS refresh proves the key with an assertion instead
+      // of resending a chain, because App Attest has none to resend.
+      result(nil)
+
     case "deleteDeviceKey":
       // Apple provides no API to delete an App Attest key. The key lives in the
       // Secure Enclave for the life of the installation and goes with it. The

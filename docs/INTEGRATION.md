@@ -627,24 +627,11 @@ application, not in the operating system. See
 
 ### Privacy manifest
 
-The Gradle plugin, the compiler plugin and the obfuscation runtime use no
-required-reason API, so string obfuscation on its own adds nothing to your
-privacy manifest.
-
-**The runtime guard is different.** Its jailbreak check reads file metadata for
-paths outside the app container, which falls under Apple's **file-timestamp**
-required-reason API category. So if you enable the runtime guard — by linking
-`StringGuard.framework`, or by exporting the guard library from your own
-framework as in [section 3.4](#34-ios-linking-the-framework) — your
-application's `PrivacyInfo.xcprivacy` needs an `NSPrivacyAccessedAPITypes` entry
-for that category.
-
-Ask us for the current reason-code guidance before you submit. Apple revises
-the required-reason list, and the right declaration depends on your app as well
-as on StringGuard, so we keep that guidance current rather than freezing a code
-into this document. An undeclared required-reason API usually draws an
-`ITMS-91053` notice on upload rather than a rejection, so this is something to
-settle before submission, not a blocker.
+StringGuard uses no required-reason API: not the Gradle plugin, the compiler
+plugin or the obfuscation runtime, and not the runtime guard. The guard's
+jailbreak check only asks whether certain paths exist, and does so without
+reading file metadata, so it does not fall under the file-timestamp category.
+Embedding StringGuard adds nothing to your application's privacy manifest.
 
 The Flutter plugin has its own case: it reads and writes one value in
 `UserDefaults`, the App
@@ -740,16 +727,28 @@ final sg = StringGuardClient(
   tenantId: 'your-app',
 );
 
-// At startup, and again when the session expires:
+// Once, at startup:
 final session = await sg.establishSession(deviceId: deviceId);
 final token = session.sessionToken;   // null when the device was blocked
 // Send `token` to your own API with every request (10.4).
+
+// When the token expires or your API rejects it:
+final renewed = await sg.refreshSession(deviceId: deviceId);
 
 // For a sensitive request (Android only; null elsewhere):
 final signed = await sg.signedRequest(
   sessionToken: token!, method: 'POST', path: '/payments', body: bodyBytes,
 );
 ```
+
+`establishSession` creates a hardware key and has the device attest it; on iOS
+that is a call to Apple, which limits how often an app may make it. Call it once
+when the app starts. `refreshSession` gets every later token with the same key:
+the device signs a fresh challenge, and no new key or call to Apple is needed.
+When the device has no key yet, or the service does not accept the proof,
+`refreshSession` attests again by itself, so it is always safe to call. Pass the
+same `deviceId` to both, and do not renew on a timer: renew when the token
+expires or your API rejects it.
 
 Send `bodyBytes` as the request body exactly, and carry the values
 `signedRequest` returns as in [10.4.4](#1044-binding-a-request-to-the-device):

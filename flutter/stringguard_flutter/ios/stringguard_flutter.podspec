@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'stringguard_flutter'
-  s.version          = '0.0.1'
+  s.version          = '1.1.0'
   s.summary          = 'StringGuard runtime self-protection and device attestation for Flutter.'
   s.description      = <<-DESC
 Flutter plugin exposing StringGuard's runtime self-protection (RASP) and device

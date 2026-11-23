@@ -1,6 +1,6 @@
 name: stringguard_flutter
 description: Flutter plugin for StringGuard runtime self-protection and device attestation.
-version: 1.0.0
+version: 1.1.0
 repository: https://github.com/duranun/stringguard
 publish_to: none
 

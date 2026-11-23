@@ -630,24 +630,11 @@ içindedir. Bkz.
 
 ### Privacy manifest
 
-Gradle plugin'i, compiler plugin'i ve obfuscation runtime'ı hiçbir
-required-reason API kullanmaz; yani tek başına string obfuscation privacy
-manifest'inize hiçbir şey eklemez.
-
-**Runtime guard farklıdır.** Jailbreak kontrolü, uygulama container'ı dışındaki
-path'lerin dosya metadata'sını okur; bu, Apple'ın **file-timestamp**
-required-reason API kategorisine girer. Runtime guard'ı
-`StringGuard.framework`'ü link ederek ya da guard kütüphanesini
-[bölüm 3.4](#34-ios-frameworkü-link-etme)'teki gibi kendi framework'ünüzden
-export ederek açarsanız, uygulamanızın `PrivacyInfo.xcprivacy` dosyasında bu
-kategori için bir `NSPrivacyAccessedAPITypes` kaydı olmalıdır.
-
-Göndermeden önce güncel reason-code önerisini bizden isteyin. Apple
-required-reason listesini güncelliyor ve doğru tanım StringGuard'ın yanı sıra
-uygulamanıza da bağlı; bu yüzden kodu bu dokümana sabitlemek yerine öneriyi
-güncel tutuyoruz. Tanımlanmamış bir required-reason API genelde reddedilmeye
-değil, yüklemede bir `ITMS-91053` uyarısına yol açar; göndermeden önce
-halletmeniz gereken bir şeydir ama engel değildir.
+StringGuard hiçbir required-reason API kullanmaz: ne Gradle plugin'i, compiler
+plugin'i ve obfuscation runtime'ı ne de runtime guard. Guard'ın jailbreak
+kontrolü yalnızca bazı path'lerin var olup olmadığına bakar ve bunu dosya
+metadata'sı okumadan yapar; bu yüzden file-timestamp kategorisine girmez.
+StringGuard'ı eklemek uygulamanızın privacy manifest'ine hiçbir şey eklemez.
 
 Flutter plugin'inin durumu ayrı: `UserDefaults`'ta tek bir değeri, App Attest
 key identifier'ını okuyup yazar. `UserDefaults` bir required-reason API'dir ve
@@ -744,16 +731,28 @@ final sg = StringGuardClient(
   tenantId: 'your-app',
 );
 
-// Açılışta ve session'ın süresi dolunca tekrar:
+// Açılışta bir kez:
 final session = await sg.establishSession(deviceId: deviceId);
 final token = session.sessionToken;   // cihaz engellendiyse null
 // `token`'ı her request'te kendi API'nize gönderin (10.4).
+
+// Token'ın süresi dolunca ya da API'niz reddedince:
+final renewed = await sg.refreshSession(deviceId: deviceId);
 
 // Hassas bir request için (yalnızca Android; diğerlerinde null):
 final signed = await sg.signedRequest(
   sessionToken: token!, method: 'POST', path: '/payments', body: bodyBytes,
 );
 ```
+
+`establishSession` bir donanım anahtarı üretir ve cihaza onu attest ettirir;
+iOS'ta bu, Apple'a giden ve Apple'ın sıklığını sınırladığı bir çağrıdır.
+Uygulama açılırken bir kez çağırın. Sonraki her token'ı `refreshSession` aynı
+anahtarla alır: cihaz yeni bir challenge'ı imzalar, yeni anahtar ya da Apple
+çağrısı gerekmez. Cihazda henüz anahtar yoksa ya da servis kanıtı kabul etmezse
+`refreshSession` kendisi yeniden attest eder; yani her zaman güvenle
+çağrılabilir. İkisine de aynı `deviceId`'yi verin ve zamanlayıcıyla yenilemeyin:
+token'ın süresi dolunca ya da API'niz reddedince yenileyin.
 
 Request body olarak tam olarak `bodyBytes`'ı gönderin ve `signedRequest`'in
 döndürdüğü değerleri [10.4.4](#1044-requesti-cihaza-bağlama)'teki gibi taşıyın:

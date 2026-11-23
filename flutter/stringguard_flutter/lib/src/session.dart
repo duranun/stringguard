@@ -43,8 +43,8 @@ class StringGuardHttpException implements Exception {
 /// challenge → attest → verify to get a session token, and builds the signed
 /// envelope for each sensitive request — producing exactly the wire shapes the
 /// backend expects, so integrators don't hand-roll base64/sha256/nonce glue and
-/// can't drift from the protocol. Deliberately small: no retries, caching, or
-/// prove-per-tenant flow here — those stay opt-in at the primitive level.
+/// can't drift from the protocol. Deliberately small: no retries or caching;
+/// the app decides when to ask for a token.
 class StringGuardClient {
   StringGuardClient({
     required this.baseUrl,
@@ -65,24 +65,22 @@ class StringGuardClient {
   /// challenge → native attest + guardReport → verify. Returns the backend's
   /// decision and (on success) a short-lived session token.
   ///
-  /// [platform] defaults to the platform the app is running on. It used to
-  /// default to `android` and the App Attest result was never sent, so an iOS
-  /// app using this client could only ever get a limited session.
+  /// This creates a new hardware key, and on iOS it calls Apple, which limits
+  /// how often an app may do so. Call it once at startup and use
+  /// [refreshSession] for every token after that.
+  ///
+  /// [platform] defaults to the platform the app is running on.
   Future<SessionResult> establishSession({
     required String deviceId,
     String? platform,
   }) async {
-    platform ??= defaultTargetPlatform == TargetPlatform.iOS ? 'ios' : 'android';
-    final ch = await _postJson('/attest/challenge', {
-      'licenseToken': licenseToken,
-      'platform': platform,
-    });
-    final nonceB64 = ch['nonce'] as String;
+    platform ??= _currentPlatform;
+    final nonceB64 = await _challenge(platform);
 
     final att = await _platform.attest(nonce: base64Decode(nonceB64), tenantId: tenantId);
     final g = await _platform.guardReport();
 
-    final verify = await _postJson('/attest/verify', {
+    return _session(await _postJson('/attest/verify', {
       'licenseToken': licenseToken,
       'platform': platform,
       'nonce': nonceB64,
@@ -92,21 +90,48 @@ class StringGuardClient {
           'keyId': att.keyId,
           'attestationObject': base64Encode(att.attestationObject!),
         },
-      'integrity': {
-        'packageName': '',
-        'deviceId': deviceId,
-        'debuggerAttached': g.debuggerAttached,
-        'rootDetected': g.rootDetected,
-        'hookingDetected': g.hookingDetected,
-        'ts': DateTime.now().millisecondsSinceEpoch,
-      },
-    });
-    return SessionResult(
-      decision: verify['decision'] as String? ?? 'DENY',
-      sessionToken: verify['sessionToken'] as String?,
-      tier: verify['tier'] as String?,
-      reasons: ((verify['reasons'] as List?) ?? const []).cast<String>(),
+      'integrity': _integrity(deviceId, g),
+    }));
+  }
+
+  /// A new session token from the key attested by [establishSession], without
+  /// a new attestation: the device signs a fresh challenge with that key.
+  /// Neither a new hardware key nor a call to Apple is needed.
+  ///
+  /// Call it when the token expires or your backend rejects it. Pass the same
+  /// [deviceId] as to [establishSession]. When the device has no attested key
+  /// yet, or the service does not accept the proof, it falls back to
+  /// [establishSession], so it is always safe to call.
+  Future<SessionResult> refreshSession({
+    required String deviceId,
+    String? platform,
+  }) async {
+    platform ??= _currentPlatform;
+    final nonceB64 = await _challenge(platform);
+    final nonce = base64Decode(nonceB64);
+
+    final proof = await _platform.signDeviceProof(
+      tenantId: tenantId,
+      audience: _licenceId(),
+      nonce: nonce,
     );
+    final chain = platform == 'ios' ? const <Uint8List>[] : await _platform.deviceChain(tenantId: tenantId);
+    if (proof == null || chain == null || (platform != 'ios' && chain.isEmpty)) {
+      return establishSession(deviceId: deviceId, platform: platform);
+    }
+
+    final g = await _platform.guardReport();
+    final result = _session(await _postJson('/attest/prove', {
+      'licenseToken': licenseToken,
+      'platform': platform,
+      'nonce': nonceB64,
+      'attestationChain': chain.map(base64Encode).toList(),
+      'proofSignature': platform == 'ios' ? '' : base64Encode(proof),
+      if (platform == 'ios') 'appleAssertion': base64Encode(proof),
+      'integrity': _integrity(deviceId, g),
+    }));
+    if (result.decision == 'DENY') return establishSession(deviceId: deviceId, platform: platform);
+    return result;
   }
 
   /// Builds the signed request envelope (ready to POST) binding this request to
@@ -145,6 +170,42 @@ class StringGuardClient {
 
   /// Releases the underlying HTTP client (if this client created it).
   void close() => _http.close();
+
+  static String get _currentPlatform => defaultTargetPlatform == TargetPlatform.iOS ? 'ios' : 'android';
+
+  Future<String> _challenge(String platform) async {
+    final ch = await _postJson('/attest/challenge', {
+      'licenseToken': licenseToken,
+      'platform': platform,
+    });
+    return ch['nonce'] as String;
+  }
+
+  Map<String, Object?> _integrity(String deviceId, GuardReport g) => {
+        'packageName': '',
+        'deviceId': deviceId,
+        'debuggerAttached': g.debuggerAttached,
+        'rootDetected': g.rootDetected,
+        'hookingDetected': g.hookingDetected,
+        'ts': DateTime.now().millisecondsSinceEpoch,
+      };
+
+  SessionResult _session(Map<String, Object?> body) => SessionResult(
+        decision: body['decision'] as String? ?? 'DENY',
+        sessionToken: body['sessionToken'] as String?,
+        tier: body['tier'] as String?,
+        reasons: ((body['reasons'] as List?) ?? const []).cast<String>(),
+      );
+
+  /// The licence id, which a device proof is bound to. The licence token is
+  /// `payload.signature`, and the payload is `v2|id|holder|expiry` with each
+  /// text field base64url-encoded.
+  String _licenceId() {
+    final payload = licenseToken.split('.').first;
+    final fields = utf8.decode(base64Url.decode(base64Url.normalize(payload))).split('|');
+    if (fields.length < 2) throw const FormatException('malformed licence token');
+    return utf8.decode(base64Url.decode(base64Url.normalize(fields[1])));
+  }
 
   Uint8List _nonce(int n) => Uint8List.fromList(List<int>.generate(n, (_) => _rng.nextInt(256)));
 

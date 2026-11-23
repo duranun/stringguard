@@ -60,6 +60,12 @@ class MethodChannelStringguardFlutter extends StringguardFlutterPlatform {
       });
 
   @override
+  Future<List<Uint8List>?> deviceChain({required String tenantId}) async {
+    final chain = await methodChannel.invokeListMethod<Object?>('deviceChain', {'tenantId': tenantId});
+    return chain?.map((e) => Uint8List.fromList((e as List).cast<int>())).toList();
+  }
+
+  @override
   Future<void> deleteDeviceKey({required String tenantId}) =>
       methodChannel.invokeMethod<void>('deleteDeviceKey', {'tenantId': tenantId});
 }

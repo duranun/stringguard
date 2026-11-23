@@ -133,6 +133,11 @@ abstract class StringguardFlutterPlatform extends PlatformInterface {
   }) =>
       throw UnimplementedError('signDeviceProof() has not been implemented.');
 
+  /// Android: the certificate chain of the key attested earlier for [tenantId],
+  /// leaf first, or null when there is none. Null on iOS.
+  Future<List<Uint8List>?> deviceChain({required String tenantId}) =>
+      throw UnimplementedError('deviceChain() has not been implemented.');
+
   Future<void> deleteDeviceKey({required String tenantId}) =>
       throw UnimplementedError('deleteDeviceKey() has not been implemented.');
 }

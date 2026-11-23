@@ -39,12 +39,14 @@ delegate to `StringguardFlutterPlatform.instance`.
 | `attest({required Uint8List nonce, required String tenantId})` | An `AttestationResult`. On Android it carries the leaf-first attestation certificate chain; on iOS it carries the App Attest `keyId` and `attestationObject`, and `isAppAttest` is true. Either way, `supported: false` with a `reason` when the platform cannot attest. |
 | `signRequest(...)` | The ECDSA signature binding a request to the attested key, or `null` when signing is unavailable. |
 | `signDeviceProof({required String tenantId, required String audience, required Uint8List nonce})` | A proof of possession over a server nonce for one tenant, or `null` when signing is unavailable. |
+| `deviceChain({required String tenantId})` | Android: the certificate chain of the key attested earlier, leaf first, or `null` when there is none. Reading it creates no key. `null` on iOS. |
 | `deleteDeviceKey({required String tenantId})` | Nothing. On Android it removes the attested key for the tenant from the keystore. On iOS it forgets the remembered App Attest key id; Apple provides no API to delete the key itself, which lives for the life of the installation. |
 
 `StringGuardClient`, exported from `src/session.dart`, wraps the challenge,
-attest and verify sequence into a single `establishSession` call and builds the
-signed envelope for each sensitive request. It holds no retry, caching or
-prove-per-tenant logic; those stay opt-in at the primitive level above.
+attest and verify sequence into a single `establishSession` call, renews the
+session with `refreshSession` (a proof signed with the key already attested, so
+no new key and, on iOS, no call to Apple), and builds the signed envelope for
+each sensitive request. It holds no retry or caching logic.
 
 ## Scope and limitations
 
@@ -56,6 +58,7 @@ Platform support, so you can branch rather than discover it at runtime:
 | `attest` | ✓ | ✓ |
 | `signDeviceProof` | ✓ | ✓ |
 | `signRequest` | ✓ | returns `null` |
+| `deviceChain` | ✓ | returns `null` |
 | `deleteDeviceKey` | ✓ | no-op |
 
 The two iOS cases report their result rather than pretending to succeed, so a
