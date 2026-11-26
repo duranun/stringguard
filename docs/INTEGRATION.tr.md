@@ -731,13 +731,10 @@ final sg = StringGuardClient(
   tenantId: 'your-app',
 );
 
-// Açılışta bir kez:
-final session = await sg.establishSession(deviceId: deviceId);
+// Açılışta, sonra token'ın süresi dolunca ya da API'niz reddedince:
+final session = await sg.refreshSession(deviceId: deviceId);
 final token = session.sessionToken;   // cihaz engellendiyse null
 // `token`'ı her request'te kendi API'nize gönderin (10.4).
-
-// Token'ın süresi dolunca ya da API'niz reddedince:
-final renewed = await sg.refreshSession(deviceId: deviceId);
 
 // Hassas bir request için (yalnızca Android; diğerlerinde null):
 final signed = await sg.signedRequest(
@@ -745,14 +742,20 @@ final signed = await sg.signedRequest(
 );
 ```
 
-`establishSession` bir donanım anahtarı üretir ve cihaza onu attest ettirir;
-iOS'ta bu, Apple'a giden ve Apple'ın sıklığını sınırladığı bir çağrıdır.
-Uygulama açılırken bir kez çağırın. Sonraki her token'ı `refreshSession` aynı
-anahtarla alır: cihaz yeni bir challenge'ı imzalar, yeni anahtar ya da Apple
-çağrısı gerekmez. Cihazda henüz anahtar yoksa ya da servis kanıtı kabul etmezse
-`refreshSession` kendisi yeniden attest eder; yani her zaman güvenle
-çağrılabilir. İkisine de aynı `deviceId`'yi verin ve zamanlayıcıyla yenilemeyin:
-token'ın süresi dolunca ya da API'niz reddedince yenileyin.
+`refreshSession` token'ı cihazda zaten olan anahtarla alır: cihaz yeni bir
+challenge'ı imzalar, yeni anahtar ya da Apple çağrısı gerekmez. Cihazda henüz
+anahtar yoksa ya da servis kanıtı kabul etmezse kendisi attest eder. Açılışta da
+bunu çağırın; önceki açılıştan kalan anahtar böylece yeniden kullanılır.
+
+`establishSession` her seferinde yeni bir donanım anahtarı üretir ve cihaza onu
+attest ettirir; iOS'ta bu, Apple'a giden ve Apple'ın sıklığını sınırladığı bir
+çağrıdır. Yalnızca yeni bir anahtarla baştan başlamak için çağırın.
+
+`deviceId` olarak kurulumda üretilen rastgele bir değer kullanın ve her seferinde
+aynısını verin. Aynı anda tek çağrı yapın: iOS'ta aynı anda iki çağrı ayrı ayrı
+anahtar üretebilir ve servis, cihazın sonra imzalayacağı anahtarı değil
+diğerini tutabilir. Zamanlayıcıyla yenilemeyin: token'ın süresi dolunca ya da
+API'niz reddedince yenileyin.
 
 Request body olarak tam olarak `bodyBytes`'ı gönderin ve `signedRequest`'in
 döndürdüğü değerleri [10.4.4](#1044-requesti-cihaza-bağlama)'teki gibi taşıyın:

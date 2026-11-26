@@ -727,13 +727,10 @@ final sg = StringGuardClient(
   tenantId: 'your-app',
 );
 
-// Once, at startup:
-final session = await sg.establishSession(deviceId: deviceId);
+// At startup, and again when the token expires or your API rejects it:
+final session = await sg.refreshSession(deviceId: deviceId);
 final token = session.sessionToken;   // null when the device was blocked
 // Send `token` to your own API with every request (10.4).
-
-// When the token expires or your API rejects it:
-final renewed = await sg.refreshSession(deviceId: deviceId);
 
 // For a sensitive request (Android only; null elsewhere):
 final signed = await sg.signedRequest(
@@ -741,14 +738,19 @@ final signed = await sg.signedRequest(
 );
 ```
 
-`establishSession` creates a hardware key and has the device attest it; on iOS
-that is a call to Apple, which limits how often an app may make it. Call it once
-when the app starts. `refreshSession` gets every later token with the same key:
-the device signs a fresh challenge, and no new key or call to Apple is needed.
-When the device has no key yet, or the service does not accept the proof,
-`refreshSession` attests again by itself, so it is always safe to call. Pass the
-same `deviceId` to both, and do not renew on a timer: renew when the token
-expires or your API rejects it.
+`refreshSession` gets a token with the key the device already has: the device
+signs a fresh challenge, and no new key or call to Apple is needed. When the
+device has no key yet, or the service does not accept the proof, it attests by
+itself. Call it at startup too, so a key from an earlier launch is reused.
+
+`establishSession` always creates a new hardware key and has the device attest
+it; on iOS that is a call to Apple, which limits how often an app may make it.
+Call it only to start over with a new key.
+
+Use a random identifier created at installation as `deviceId`, and pass the
+same one every time. Make one call at a time: two at once on iOS can each create
+a key, and the service may keep the one the device does not sign with next. Do
+not renew on a timer: renew when the token expires or your API rejects it.
 
 Send `bodyBytes` as the request body exactly, and carry the values
 `signedRequest` returns as in [10.4.4](#1044-binding-a-request-to-the-device):
