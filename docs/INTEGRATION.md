@@ -1072,7 +1072,7 @@ All configuration is read from the environment.
 | `SG_DASHBOARD` | Set to `off` to serve the API without the dashboard. |
 | `SG_AUDIT_LOG` | Path to the decision log. Omit it and no log is written. |
 | `SG_SESSION_TTL_MS` | How long a session token stays valid. Defaults to 15 minutes. |
-| `SG_RATE_PER_MIN` | Requests per minute per caller on the device API. Defaults to 120. |
+| `SG_RATE_PER_MIN` | Requests per minute per caller address on the device API. Defaults to 600. Mobile carriers and company networks put many devices behind one address; a device makes at most four requests per session. Raise it if your users share addresses in large numbers. A refused request gets `429` with `Retry-After`. |
 | `SG_TRUSTED_PROXIES` | The IP addresses your reverse proxy connects from, comma-separated (for example `127.0.0.1`). Rate limiting then counts the caller the proxy reports in `X-Forwarded-For`; without it, every request behind the proxy counts as one caller. |
 | `SG_THREADS` | Request concurrency. Sized from the host by default. |
 | `SG_ALLOW_APPLE_DEVELOPMENT` | Leave unset. Enabling it in production is refused. |

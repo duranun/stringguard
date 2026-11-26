@@ -1079,7 +1079,7 @@ Tüm konfigürasyon environment'tan okunur.
 | `SG_DASHBOARD` | Dashboard olmadan yalnızca API sunmak için `off`. |
 | `SG_AUDIT_LOG` | Karar log'unun yolu. Verilmezse log yazılmaz. |
 | `SG_SESSION_TTL_MS` | Session token'ın ne kadar geçerli kalacağı. Varsayılan 15 dakika. |
-| `SG_RATE_PER_MIN` | Cihaz API'sinde çağıran başına dakikalık request sayısı. Varsayılan 120. |
+| `SG_RATE_PER_MIN` | Cihaz API'sinde çağıran adresi başına dakikalık request sayısı. Varsayılan 600. Mobil operatörler ve şirket ağları çok sayıda cihazı tek adresin arkasına koyar; bir cihaz session başına en fazla dört request yapar. Kullanıcılarınız adresleri büyük sayılarla paylaşıyorsa artırın. Reddedilen request `429` ve `Retry-After` alır. |
 | `SG_TRUSTED_PROXIES` | Reverse proxy'nizin bağlandığı IP adresleri, virgülle ayrılmış (örneğin `127.0.0.1`). Rate limiting bu durumda proxy'nin `X-Forwarded-For` ile bildirdiği çağıranı sayar; ayarlanmazsa proxy arkasındaki bütün request'ler tek çağıran sayılır. |
 | `SG_THREADS` | Request eşzamanlılığı. Varsayılan olarak host'a göre belirlenir. |
 | `SG_ALLOW_APPLE_DEVELOPMENT` | Ayarlamayın. Production'da açılması reddedilir. |
