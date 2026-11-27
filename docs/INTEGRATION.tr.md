@@ -1022,11 +1022,10 @@ Servis sizin altyapınızda çalışır; cihaz trafiği ve aşağıdaki kayıtla
 
 #### 10.7.2 Kurulum
 
-Arşivi indirip doğrulayın:
+Arşiv lisansınızla birlikte, `.sha256` dosyasıyla beraber teslim edilir.
+Doğrulayıp açın:
 
 ```bash
-curl -fsSLO https://duranun.github.io/stringguard/service/stringguard-attest-service-1.0.0.tar
-curl -fsSLO https://duranun.github.io/stringguard/service/stringguard-attest-service-1.0.0.tar.sha256
 shasum -a 256 -c stringguard-attest-service-1.0.0.tar.sha256
 tar -xf stringguard-attest-service-1.0.0.tar
 cd stringguard-attest-service-1.0.0
@@ -1068,7 +1067,6 @@ Tüm konfigürasyon environment'tan okunur.
 | Ayar | |
 |---|---|
 | `SG_PROFILE` | `production` yapın. Başka her değer serbest modda çalışır ve bunu söyler. |
-| `SG_LICENSE_PUBLIC_KEY` | Lisansınızla birlikte verilen lisans public key'i. |
 | `SG_SESSION_KEYS` | `bin/stringguard-attest keys` komutunun yazdığı değer. |
 | `SG_ANDROID_ROOTS` | Google root sertifikaları dosyasının yolu; birden fazlası `;` ile ayrılır. PEM veya DER. |
 | `SG_APPLE_ROOT` | Apple App Attest root sertifikasının yolu. PEM veya DER. |

@@ -1015,11 +1015,10 @@ below never leave it. It is delivered as an archive you unpack and run on any ho
 
 #### 10.7.2 Install
 
-Download the archive and check it:
+The archive is delivered with your licence, together with its `.sha256` file.
+Check it and unpack it:
 
 ```bash
-curl -fsSLO https://duranun.github.io/stringguard/service/stringguard-attest-service-1.0.0.tar
-curl -fsSLO https://duranun.github.io/stringguard/service/stringguard-attest-service-1.0.0.tar.sha256
 shasum -a 256 -c stringguard-attest-service-1.0.0.tar.sha256
 tar -xf stringguard-attest-service-1.0.0.tar
 cd stringguard-attest-service-1.0.0
@@ -1061,7 +1060,6 @@ All configuration is read from the environment.
 | Setting | |
 |---|---|
 | `SG_PROFILE` | Set to `production`. Anything else runs permissively and reports that it is doing so. |
-| `SG_LICENSE_PUBLIC_KEY` | The licence public key supplied with your licence. |
 | `SG_SESSION_KEYS` | The value printed by `bin/stringguard-attest keys`. |
 | `SG_ANDROID_ROOTS` | Path to the Google root certificates file; several paths are separated by `;`. PEM or DER. |
 | `SG_APPLE_ROOT` | Path to the Apple App Attest root certificate. PEM or DER. |
